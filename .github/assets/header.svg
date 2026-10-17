@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title desc">
+  <title id="title">UE4SS for Star Wars Zero Company</title>
+  <desc id="desc">Vercadi's game-specific UE4SS compatibility package. Full release v1.1.2 and community fixes.</desc>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#8acddc" stroke-opacity=".055"/>
+    </pattern>
+  </defs>
+  <path fill="#0c131a" d="M0 0h1280v320H0z"/>
+  <path fill="url(#grid)" d="M0 0h1280v320H0z"/>
+  <path stroke="#293c48" fill="none" d="M.5.5h1279v319H.5z"/>
+  <path fill="#8acddc" d="M0 0h7v320H0z"/>
+  <path stroke="#385261" d="M48 244h1184"/>
+  <path stroke="#385261" stroke-width="2" d="M1232 48h-25m25 0v25m0 199h-25m25 0v-25"/>
+  <path stroke="#8acddc" stroke-opacity=".25" fill="none" d="m1110 45 70 70-70 70m26-140 70 70-70 70m26-140 70 70-70 70"/>
+  <text x="52" y="52" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="2.2" fill="#8acddc">VERCADI / MODDING TOOLS</text>
+  <text x="48" y="196" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="120" letter-spacing="-5" fill="#f2f0e8">UE4SS</text>
+  <path stroke="#385261" d="M475 104v102"/>
+  <text x="514" y="133" font-family="'Segoe UI', Arial, sans-serif" font-weight="600" font-size="22" letter-spacing="6" fill="#8acddc">STAR WARS</text>
+  <text x="512" y="194" font-family="'Segoe UI', Arial, sans-serif" font-weight="750" font-size="57" letter-spacing="-.8" fill="#f2f0e8">ZERO COMPANY</text>
+  <text x="52" y="284" font-family="Consolas, 'Courier New', monospace" font-size="14" letter-spacing="1.2" fill="#a8bac6">COMPATIBILITY / CONSOLE / COMMUNITY FIXES</text>
+  <text x="1232" y="284" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="14" letter-spacing="1" fill="#8acddc">FULL RELEASE 1.1.2</text>
+</svg>
