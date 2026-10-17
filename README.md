@@ -4,7 +4,7 @@
 
 The complete released package, ready to install or patch: `dwmapi.dll` and the `ue4ss` folder. This mirrors **v1.1.2**; publishing it here does not add a new compatibility fix.
 
-[![Support my work on Ko-fi](https://storage.ko-fi.com/cdn/kofi3.png?v=3)](https://ko-fi.com/vercadi)
+<a href="https://ko-fi.com/vercadi"><img src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01cf2da94a032117b9_support_me_on_kofi_red-p-500.avif" alt="Support my work on Ko-fi" width="240"></a>
 
 > **Community maintenance**
 >
