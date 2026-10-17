@@ -1,0 +1,63 @@
+name: Bug report
+description: Report a reproducible loader or compatibility issue with logs and diagnostics.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use the current complete Nexus package. Remove personal paths before sharing reports. Do not upload game executables, PDBs, dumps or saves publicly. If a file was not created or the tool failed, explain that instead.
+  - type: dropdown
+    id: storefront
+    attributes:
+      label: Storefront
+      options:
+        - Steam
+        - EA App / EA Play
+        - Epic
+        - Other / unknown (explain below)
+    validations:
+      required: true
+  - type: input
+    id: package_version
+    attributes:
+      label: UE4SS package version
+      description: Include whether this is an official Nexus package or a community build.
+      placeholder: "v1.1.2 from Nexus"
+    validations:
+      required: true
+  - type: input
+    id: game_version
+    attributes:
+      label: Game version
+      description: Use FileVersion or the diagnostic result if available. Unknown is acceptable.
+      placeholder: "199049, or unknown"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: What happens and how to reproduce it
+      description: Include the expected result, actual result, exact error and when it occurs. Mention launcher or non-Windows setup details where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: mods
+    attributes:
+      label: Installed mods and comparison tests
+      description: List mods and versions, including non-UE4SS modifications. Describe tests with added mods removed or the loader disabled, if tried. Say none if no added mods are installed; do not guess.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostic
+    attributes:
+      label: Diagnostic report
+      description: Paste the Diagnostic Tool v1.3 report or attach its text file here. If it cannot run, give the error and install path with personal information removed.
+    validations:
+      required: true
+  - type: textarea
+    id: fresh_log
+    attributes:
+      label: Fresh UE4SS.log
+      description: Attach or paste the log from the failed attempt before launching again. If none was created, explicitly say so. Include the game crash error text if available.
+    validations:
+      required: true

@@ -1,0 +1,4 @@
+# Preserve published signature and PowerShell bytes on every checkout.
+* -text whitespace=cr-at-eol
+# This published configuration includes a historical trailing space; retain its hash.
+config/UE4SS-settings.ini -whitespace

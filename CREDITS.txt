@@ -1,0 +1,18 @@
+CREDITS - UE4SS FOR STAR WARS ZERO COMPANY 1.1.2
+
+UE4SS development team and contributors - the underlying UE4SS project.
+https://github.com/UE4SS-RE/RE-UE4SS
+
+Vercadi - Star Wars Zero Company compatibility package and support.
+
+Thank you to these Nexus community members for helping the investigation
+through reports, diagnostic information, supplied files and testing:
+  dvsreemo24
+  Fobio266
+  shancb9
+  Mace225
+  toki64136413
+  rhpchong80
+
+Their help was valuable in identifying and validating the EA compatibility fix.
+These acknowledgments do not imply that each person tested every build or mod.
