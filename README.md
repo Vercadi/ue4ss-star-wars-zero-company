@@ -1,47 +1,29 @@
-# UE4SS compatibility for Star Wars Zero Company
+# UE4SS for Star Wars Zero Company
 
-Game-specific Lua signatures and a diagnostic tool maintained by Vercadi, with community fixes welcome.
+The complete **v1.1.2 release**, in its normal installation layout: `dwmapi.dll` and the `ue4ss` folder. This mirrors the existing package; it is not a new compatibility fix.
 
-**Download the complete loader from [Nexus Mods](https://www.nexusmods.com/starwarszerocompany/mods/9?tab=files).** This repository contains the compatibility layer, not a standalone UE4SS installation or the full native loader source. It does not include the loader DLL, proxy or bundled helpers.
+## Download and install
 
-## What is here
+[Download the complete v1.1.2 ZIP](https://github.com/Vercadi/ue4ss-star-wars-zero-company/releases/download/v1.1.2/UE4SS_for_Star_Wars_Zero_Company_v1.1.2_Steam-EA.zip) or use [Nexus Mods](https://www.nexusmods.com/starwarszerocompany/mods/9?tab=files).
 
-- `signatures/`: the four published v1.1.2 signature scripts, preserved byte for byte.
-- `config/`: the published game settings.
-- `diagnostics/`: the optional Diagnostic Tool v1.3 source and launcher.
-- `tools/`: offline verification and packaging tools.
-- [Compatibility evidence](docs/compatibility.md), [support instructions](SUPPORT.md) and [contribution guide](CONTRIBUTING.md).
+Close the game and back up your existing `dwmapi.dll` and complete `ue4ss` folder outside the game directory. Extract the ZIP into `SWZeroCompany\Binaries\Win64`, beside `SWZeroCompany.exe`, replacing included files. Custom settings are replaced; extra mods are not removed. Launch normally through your store client.
 
-The resolvers scan for function patterns and validate the result. The EA loaded-code fallback admits two reviewed executable identities; an unknown identity is rejected. Future game updates can still require changes to signatures, build profiles or the native loader.
+To roll back, close the game and restore your backup. To disable this loader temporarily, move its `dwmapi.dll` outside `Win64`.
 
-## Current status
+## Help patch it
 
-On 16 October 2026, local executable **199049** initialized with the existing v1.1.1 runtime. F10 and loading an existing save worked. The published v1.1.2 scripts also passed offline checks against that executable. These are different kinds of evidence: the v1.1.2 scripts were not installed for that game session. A current retail Steam build ID and updated EA executable were not independently verified in that check. See [the evidence table](docs/compatibility.md) for the limits.
+1. Download and extract the complete release. Change the relevant files, usually in `ue4ss/UE4SS_Signatures/`.
+2. Test your changes in-game: startup, F10, save loading, entering a mission and normal exit. State anything you could not test.
+3. Submit a **pull request with the changed files**, or [open an issue](https://github.com/Vercadi/ue4ss-star-wars-zero-company/issues/new) and attach your changed Lua files in a ZIP.
 
-There is no guaranteed update schedule. Useful bug reports and tested pull requests are welcome. A compatibility change in this repository does not establish that every third-party mod supports the game update.
+Include what failed, what you changed, your storefront/game version, mods used and a fresh `UE4SS.log`. If no log was created, say so. A diagnostic report is helpful if available. Remove personal details before posting; keep game EXEs, PDBs, saves and dumps private.
 
-## Development
+**No Python, packaging tools or manual hash updates are required to contribute.** Community test files are reviewed before becoming an official Nexus update. Further updates are not guaranteed.
 
-Use Python 3.11 or newer and install the verification dependencies:
+## Version and credits
 
-```powershell
-python -m pip install -r requirements-dev.txt
-python tools/verify.py
-python tools/verify_game.py --exe "X:\Games\Star Wars Zero Company\SWZeroCompany\Binaries\Win64\SWZeroCompany.exe"
-```
+On local executable 199049, v1.1.1 initialized and the owner confirmed F10 and save loading. The v1.1.2 scripts passed offline checks against that executable; they were not runtime-tested in that session. This does not confirm every storefront or mod.
 
-Verification reads the supplied executable; it does not launch the game. A passing offline check still needs a fresh game session and log.
+Based on [UE4SS source a1e7f571](https://github.com/UE4SS-RE/RE-UE4SS/tree/a1e7f571c789f63f3de6773d056be6f778c14dc8). The included DLL retains the existing two-byte FName branch patch at file offset `0x34E550` (`74 49` to `90 90`). For DLL changes, include the corresponding source changes and build/test details.
 
-To make a full package, supply an existing complete v1.1.2 release ZIP or the exact [upstream UE4SS v3.0.1-1088 archive](https://github.com/UE4SS-RE/RE-UE4SS/releases/download/experimental/UE4SS_v3.0.1-1088-ga1e7f571.zip). The tool verifies the base archive's hash before packaging:
-
-```powershell
-python tools/package.py --base-package "X:\Downloads\UE4SS_for_Star_Wars_Zero_Company_v1.1.2_Steam-EA.zip" --output "X:\Builds\UE4SS-community-test.zip"
-```
-
-The upstream path applies the recorded two-byte native DLL patch, settings and signatures to reconstruct the published 24-file runtime. See [native provenance](docs/native-provenance.md) for its scope and standalone patch command. The generated archive's documentation and ZIP bytes can differ from the historical release.
-
-Package output is for testing until its exact files have been qualified. Keep game executables, PDBs, dumps and private reports outside this repository.
-
-## Credits
-
-[UE4SS developers and contributors](https://github.com/UE4SS-RE/RE-UE4SS) created the underlying loader. Vercadi maintains this game's compatibility package. Thanks to **dvsreemo24, Fobio266, shancb9, Mace225, toki64136413 and rhpchong80** for reports, files and testing, and to everyone contributing useful evidence. These acknowledgments do not imply that every contributor tested every version.
+See [CREDITS.txt](CREDITS.txt) and the original [UE4SS license](ue4ss/LICENSE). This repository contains the released runtime, not the full native UE4SS source tree.
